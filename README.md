@@ -153,4 +153,4 @@ python run_all.py                   # 跑 config.json 全部
 2. 訓練完成後雙擊 `run_local.bat`：安裝依賴、啟動 API 與前端，開啟 http://localhost:5173。瀏覽器若先開啟，等 Vite 就緒後重新整理。
 3. 更新預測時再次執行 `train_local.bat`；結束網站時，在前端視窗按 Ctrl+C 並關閉 API 視窗。
 
-也可從命令提示字元執行 `train_local.bat --ticker 2330`，只更新單一股票，或使用 `train_local.bat --force` 強制重算。`setup_local.bat` 是共用的 Python 環境安裝程序。股票的 `name` 暫以代號顯示，可自行在設定中填入名稱。
+也可從命令提示字元執行 `train_local.bat --ticker 2330`，只更新單一股票，或使用 `train_local.bat --force` 強制重算。`setup_local.bat` 是共用的 Python 環境安裝程序。股票的 `name` 已設定為中文簡稱，可自行在設定中調整。
