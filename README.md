@@ -144,3 +144,13 @@ python run_all.py                   # 跑 config.json 全部
 - 「前端新增一個頁面，列出所有標的的判定結果總表」
 
 > 本系統僅供研究與學習，非投資建議。
+
+## Windows 本機執行
+
+需先安裝 Python 3.10 以上（含 pip，加入 PATH）與 Node.js（含 npm）。
+
+1. 雙擊 `train_local.bat`：自動建立 `.venv`、安裝 Python 套件，依 `config.json` 下載真實資料並訓練全部股票。20 檔首次訓練可能需要較長時間，需連網。
+2. 訓練完成後雙擊 `run_local.bat`：安裝依賴、啟動 API 與前端，開啟 http://localhost:5173。瀏覽器若先開啟，等 Vite 就緒後重新整理。
+3. 更新預測時再次執行 `train_local.bat`；結束網站時，在前端視窗按 Ctrl+C 並關閉 API 視窗。
+
+也可從命令提示字元執行 `train_local.bat --ticker 2330`，只更新單一股票，或使用 `train_local.bat --force` 強制重算。`setup_local.bat` 是共用的 Python 環境安裝程序。股票的 `name` 暫以代號顯示，可自行在設定中填入名稱。
