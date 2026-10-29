@@ -1,0 +1,6 @@
+# ===== GitHub Actions / 本機訓練用（不會安裝到 Render）=====
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+yfinance>=0.2.40
+pytest>=8.0

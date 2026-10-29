@@ -1,0 +1,49 @@
+name: Weekly Tune
+
+on:
+  schedule:
+    - cron: "0 2 * * 6"        # 每週六 UTC 02:00（台灣 10:00），收盤後資料穩定
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: "只調參單一代號（留空 = 全部）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  tune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements-train.txt
+      - run: pip install -r backend/requirements-train.txt
+
+      - name: 調參（巢狀 walk-forward，外層 120 天不參與）
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.ticker }}" ]; then ARGS="--ticker ${{ github.event.inputs.ticker }}"; fi
+          python backend/tune.py $ARGS
+
+      - name: 用新參數重新產生預測
+        run: python backend/run_all.py --force
+
+      - name: Commit 結果
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: weekly tune $(date -u +%F)"
+          git pull --rebase
+          git push

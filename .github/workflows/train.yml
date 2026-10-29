@@ -1,0 +1,56 @@
+name: Daily Train
+
+on:
+  schedule:
+    - cron: "0 7 * * 1-5"      # UTC 07:00 = 台灣 15:00（週一到週五）；排程可能延遲數分鐘
+  workflow_dispatch:           # 手動觸發按鈕
+    inputs:
+      ticker:
+        description: "只跑單一代號（留空 = config.json 全部）"
+        required: false
+        default: ""
+      force:
+        description: "即使最新交易日沒變也重跑"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write              # 讓 workflow 能把結果 commit 回 repo
+
+concurrency:
+  group: data-update           # 避免兩個 workflow 同時 commit 造成衝突
+  cancel-in-progress: false
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements-train.txt
+
+      - run: pip install -r backend/requirements-train.txt
+
+      - name: 單元測試（含資料洩漏檢查，使用合成資料）
+        run: USE_SYNTHETIC=1 python -m pytest backend/tests -q
+
+      - name: 訓練 + 回測
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.ticker }}" ]; then ARGS="$ARGS --ticker ${{ github.event.inputs.ticker }}"; fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          python backend/run_all.py $ARGS
+
+      - name: Commit 結果
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: update forecast data $(date -u +%F)"
+          git pull --rebase
+          git push
