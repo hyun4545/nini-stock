@@ -23,6 +23,7 @@ from features import check_causality, summarize
 from models import HORIZONS, MODEL_IDS, MODEL_NAMES, load_params
 from pipeline import allowed_horizons, prepare
 from train import feature_importance, forecast
+from trade_plan import build_trade_plan
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -67,7 +68,11 @@ def process(stock_cfg: dict, cfg: dict, force: bool) -> dict:
     last_date = str(prep.df.index[-1].date())
     if out_file.exists() and not force:
         try:
-            if json.loads(out_file.read_text(encoding="utf-8")).get("last_date") == last_date:
+            existing = json.loads(out_file.read_text(encoding="utf-8"))
+            if (existing.get("last_date") == last_date
+                    and existing.get("trade_plan", {}).get("version") == 1
+                    and existing.get("trade_plan_settings") == cfg.get("trade_plan", {})
+                    and existing.get("name") == stock_cfg.get("name", prep.code)):
                 log.info("%s 最新交易日 %s 沒變，略過（加 --force 可強制重跑）", prep.code, last_date)
                 return {"code": prep.code, "skipped": True}
         except Exception:  # noqa: BLE001
@@ -113,6 +118,9 @@ def process(stock_cfg: dict, cfg: dict, force: bool) -> dict:
         "history": bt["history"], "forecast": fc["forecast"], "forecast_days": fc["forecast_days"],
         "horizon_preds": fc["horizon_preds"], "clipped": fc["clipped"], "fit_seconds": fc["fit_seconds"],
         "feature_importance": imp, "disclaimer": DISCLAIMER,
+        "trade_plan": build_trade_plan(fc, bt["metrics"], float(close.iloc[-1]),
+                                       cfg.get("trade_plan"), data_source.use_synthetic()),
+        "trade_plan_settings": cfg.get("trade_plan", {}),
     }
     DATA.mkdir(exist_ok=True)
     out_file.write_text(json.dumps(clean(result), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

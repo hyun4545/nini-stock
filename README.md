@@ -154,3 +154,18 @@ python run_all.py                   # 跑 config.json 全部
 3. 更新預測時再次執行 `train_local.bat`；結束網站時，在前端視窗按 Ctrl+C 並關閉 API 視窗。
 
 也可從命令提示字元執行 `train_local.bat --ticker 2330`，只更新單一股票，或使用 `train_local.bat --force` 強制重算。`setup_local.bat` 是共用的 Python 環境安裝程序。股票的 `name` 已設定為中文簡稱，可自行在設定中調整。
+## 半年內買賣情境與本次部署
+
+畫面新增「半年內買賣情境參考」，使用最多 120 個估算交易日內的直接預測天期（不以每日內插曲線挑低高點），比較先買後賣組合的成本後報酬。顯示進出場估算日期窗、各模型預測價格範圍及成本前後報酬。價格範圍是模型分歧，並非信賴區間；時間窗前後各 5 個估算交易日且不重疊，日期未扣除台股休市日。
+
+`config.json` 的 `trade_plan` 提供成本假設：`fee_rate` 為每邊手續費、`sell_tax_rate` 為賣出稅率、`slippage_rate` 為每邊滑價、`min_net_return` 為淨報酬門檻、`window_days` 為時間窗寬度。預設是一般股票研究情境，請按實際商品及券商調整；未計最低手續費及股數取整。報酬以錨點模型平均價估算，不代表價格區間內任意成交都可達成。
+
+合成資料、成本後報酬不足、模型方向不一致，或買入與賣出天期未同時獲至少兩個模型通過既有方向回測時顯示「觀望」。既有 120 日回測通常不足以驗證長天期，因此半年情境常會顯示觀望；短期排名不會當成長期可信度。買賣規則尚未做策略回測，顯示的報酬不是歷史績效。每次資料更新會重新估算，舊情境可能改變。
+
+部署順序：
+
+1. 將本次程式與設定推送至 GitHub 使用的分支。
+2. GitHub → Actions → Daily Train → Run workflow：ticker 留空、force 勾選，等待全部股票重新產生並提交 `data/*.json`。本機也可執行 `train_local.bat --force` 後自行提交資料。
+3. Render 前端 `stock-forecast-web` 需重新部署，才能顯示新卡片。若已自動部署成功則不需再手動執行；否則 Manual Deploy → Deploy latest commit。
+4. Render API 若有 `DATA_BASE_URL`，程式只透傳 JSON，本次 API 不需重新部署；等資料快取（預設 10 分鐘）過期後重新整理。若未設定而讀本機 `data/`，需在第 2 步資料提交完成後重新部署 API，並確認部署包含根目錄 `data/`（目前 Blueprint 設定 API rootDir 為 backend，建議直接設定 DATA_BASE_URL 指向 GitHub raw 的 data）。
+5. 開啟任一股票頁，確認新的收盤日與「半年內買賣情境參考」卡片。若顯示資料尚未包含情境，表示仍在讀取舊 JSON，請檢查 Actions、資料網址及快取。

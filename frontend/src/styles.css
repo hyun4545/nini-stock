@@ -119,3 +119,8 @@ footer.disc {
   .search input { width: 120px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.trade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 16px 0; }
+.trade-card { border: 1px solid #d7dee5; border-radius: 10px; padding: 16px; }
+.trade-card h4 { margin: 0 0 12px; }
+.trade-card strong { font-size: 1.2rem; }
+.trade-card p { margin: 10px 0 0; overflow-wrap: anywhere; }

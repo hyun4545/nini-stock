@@ -15,7 +15,7 @@
                        "name":  "華航"
                    },
                    {
-                       "code":  "2912", 
+                       "code":  "2912",
                        "name":  "統一超"
                    },
                    {
@@ -86,5 +86,12 @@
                        "code":  "3037",
                        "name":  "欣興"
                    }
-               ]
+               ],
+    "trade_plan":  {
+                       "fee_rate":  0.001425,
+                       "sell_tax_rate":  0.003,
+                       "slippage_rate":  0.001,
+                       "min_net_return":  0.05,
+                       "window_days":  5
+                   }
 }

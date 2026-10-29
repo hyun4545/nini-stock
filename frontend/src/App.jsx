@@ -198,6 +198,54 @@ function HorizonTable({ d }) {
   );
 }
 
+function TradePlan({ plan }) {
+  if (!plan) return (
+    <section className="block">
+      <h3>半年內買賣情境參考</h3>
+      <p className="hint">目前資料尚未包含買賣情境。請以新版程式執行 Daily Train（勾選 force）後重新整理。</p>
+    </section>
+  );
+  const c = plan.candidate;
+  const costs = plan.costs;
+  return (
+    <section className="block" aria-label="半年內買賣情境參考">
+      <h3>半年內買賣情境參考 · {plan.label}</h3>
+      <p className="hint">{plan.method_note}</p>
+      {c && (
+        <>
+          {plan.status === "watch" && <p className="hint">以下只展示模型情境，尚未符合追蹤條件。</p>}
+          <div className="trade-grid">
+            {[["買入參考", c.buy], ["賣出參考", c.sell]].map(([label, leg]) => (
+              <div className="trade-card" key={label}>
+                <h4>{label}</h4>
+                <strong>NT$ {num(leg.price_range[0])}～{num(leg.price_range[1])}</strong>
+                <p>模型平均價 NT$ {num(leg.price)}</p>
+                <p>約 {leg.window[0]}～{leg.window[1]}</p>
+                <p className="hint">預測錨點：第 {leg.day} 個估算交易日（{leg.date}）</p>
+              </div>
+            ))}
+          </div>
+          <p>此組合預估報酬：成本前 {pct(c.gross_return)} ／ 扣除成本後 {pct(c.net_return)}</p>
+          <p className="hint">價格區間為各模型在錨點的預測價範圍，不是信賴區間。報酬以兩個錨點的模型平均價計算，不代表時間窗內任意成交價均可達成。</p>
+          <details>
+            <summary>各模型的預估淨報酬</summary>
+            <ul>{Object.entries(c.model_net_returns).map(([mid, value]) => (
+              <li key={mid}>{{ rf: "Random Forest", gb: "Gradient Boosting", ridge: "Ridge" }[mid] || mid}：{pct(value)}</li>
+            ))}</ul>
+          </details>
+        </>
+      )}
+      <ul className="warns">{plan.reasons.map((reason, i) => <li key={i}>{reason}</li>)}</ul>
+      <p className="hint">
+        成本假設：買賣各收手續費 {pct(costs.fee_rate, 4)}、賣出稅率 {pct(costs.sell_tax_rate, 2)}、
+        買賣各計滑價 {pct(costs.slippage_rate, 2)}；淨報酬門檻 {pct(costs.min_net_return)}。
+        可於 config.json 的 trade_plan 調整，未計最低手續費與股數取整。
+      </p>
+      <p className="hint">{plan.date_note} 每次資料更新會重新估算，請以最新收盤日為準。</p>
+    </section>
+  );
+}
+
 /* ---------- 主畫面 ---------- */
 export default function App() {
   const [stocks, setStocks] = useState(null);
@@ -288,6 +336,7 @@ export default function App() {
             )}
 
             <Verdict d={data} />
+            <TradePlan plan={data.trade_plan} />
             {data.warnings.length > 0 && (
               <ul className="warns">{data.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul>
             )}
