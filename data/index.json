@@ -239,6 +239,18 @@
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
+  },
+  {
+   "code": "6122",
+   "name": "擎邦",
+   "ticker": "6122.TWO",
+   "type": "stock",
+   "last_close": 58.3,
+   "last_date": "2026-10-30",
+   "updated_at": "2026-10-30T15:04+08:00",
+   "overall_verdict": "沒有任何模型通過驗證",
+   "any_reliable": false,
+   "synthetic": false
   }
  ]
 }
