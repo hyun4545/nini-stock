@@ -1,0 +1,143 @@
+{
+ "code": "6235",
+ "tuned_at": "2026-10-31T07:52:14+00:00",
+ "outer_start_date": "2026-05-07",
+ "max_date_used": "2026-05-06",
+ "params": {
+  "gb": {
+   "5": {
+    "learning_rate": 0.025383519597864834,
+    "max_depth": 3,
+    "min_samples_leaf": 100,
+    "l2_regularization": 0.907530456191219,
+    "max_iter": 139
+   },
+   "10": {
+    "learning_rate": 0.02036373152712684,
+    "max_depth": 6,
+    "min_samples_leaf": 99,
+    "l2_regularization": 8.631202041893179,
+    "max_iter": 154
+   }
+  },
+  "rf": {
+   "5": {
+    "n_estimators": 92,
+    "max_depth": 5,
+    "min_samples_leaf": 100,
+    "max_features": 0.679577469975106
+   },
+   "10": {
+    "n_estimators": 54,
+    "max_depth": 3,
+    "min_samples_leaf": 41,
+    "max_features": 0.4272069551383192
+   },
+   "20": {
+    "n_estimators": 80,
+    "max_depth": 3,
+    "min_samples_leaf": 69,
+    "max_features": 0.5297512192391727
+   }
+  },
+  "ridge": {
+   "5": {
+    "alpha": 16.45742970261471
+   },
+   "10": {
+    "alpha": 68.18283071271793
+   },
+   "20": {
+    "alpha": 52.81354289556641
+   }
+  }
+ },
+ "diagnostics": [
+  {
+   "model": "gb",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.6715,
+   "val": 0.5178,
+   "std": 0.0417,
+   "gap": 0.1537,
+   "score": 0.497
+  },
+  {
+   "model": "rf",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.5695,
+   "val": 0.4969,
+   "std": 0.0264,
+   "gap": 0.0726,
+   "score": 0.4837
+  },
+  {
+   "model": "ridge",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.6424,
+   "val": 0.5478,
+   "std": 0.0378,
+   "gap": 0.0946,
+   "score": 0.5288
+  },
+  {
+   "model": "gb",
+   "horizon": 10,
+   "tried": 20,
+   "train": 0.6966,
+   "val": 0.5163,
+   "std": 0.0368,
+   "gap": 0.1803,
+   "score": 0.4979
+  },
+  {
+   "model": "rf",
+   "horizon": 10,
+   "tried": 20,
+   "train": 0.656,
+   "val": 0.5137,
+   "std": 0.0201,
+   "gap": 0.1424,
+   "score": 0.5036
+  },
+  {
+   "model": "ridge",
+   "horizon": 10,
+   "tried": 20,
+   "train": 0.64,
+   "val": 0.5307,
+   "std": 0.0638,
+   "gap": 0.1093,
+   "score": 0.4988
+  },
+  {
+   "model": "gb",
+   "horizon": 20,
+   "tried": 20,
+   "note": "所有參數落差過大，維持預設"
+  },
+  {
+   "model": "rf",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.6615,
+   "val": 0.5437,
+   "std": 0.0591,
+   "gap": 0.1177,
+   "score": 0.5142
+  },
+  {
+   "model": "ridge",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.6887,
+   "val": 0.5656,
+   "std": 0.1178,
+   "gap": 0.123,
+   "score": 0.5067
+  }
+ ]
+}

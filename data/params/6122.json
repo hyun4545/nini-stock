@@ -1,0 +1,132 @@
+{
+ "code": "6122",
+ "tuned_at": "2026-10-31T08:13:10+00:00",
+ "outer_start_date": "2026-05-07",
+ "max_date_used": "2026-05-06",
+ "params": {
+  "gb": {
+   "5": {
+    "learning_rate": 0.020428753849869398,
+    "max_depth": 4,
+    "min_samples_leaf": 59,
+    "l2_regularization": 8.894878343490003,
+    "max_iter": 114
+   }
+  },
+  "rf": {
+   "5": {
+    "n_estimators": 114,
+    "max_depth": 3,
+    "min_samples_leaf": 61,
+    "max_features": 0.6708618212271469
+   },
+   "10": {
+    "n_estimators": 57,
+    "max_depth": 7,
+    "min_samples_leaf": 71,
+    "max_features": 0.4986286775195412
+   },
+   "20": {
+    "n_estimators": 108,
+    "max_depth": 6,
+    "min_samples_leaf": 99,
+    "max_features": 0.34299089135445887
+   }
+  },
+  "ridge": {
+   "5": {
+    "alpha": 0.18379343175330176
+   },
+   "10": {
+    "alpha": 946.4705056805287
+   },
+   "20": {
+    "alpha": 52.81354289556641
+   }
+  }
+ },
+ "diagnostics": [
+  {
+   "model": "gb",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.6813,
+   "val": 0.5124,
+   "std": 0.0437,
+   "gap": 0.1689,
+   "score": 0.4906
+  },
+  {
+   "model": "rf",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.6048,
+   "val": 0.5053,
+   "std": 0.0138,
+   "gap": 0.0995,
+   "score": 0.4984
+  },
+  {
+   "model": "ridge",
+   "horizon": 5,
+   "tried": 20,
+   "train": 0.6339,
+   "val": 0.4995,
+   "std": 0.0487,
+   "gap": 0.1344,
+   "score": 0.4751
+  },
+  {
+   "model": "gb",
+   "horizon": 10,
+   "tried": 20,
+   "note": "所有參數落差過大，維持預設"
+  },
+  {
+   "model": "rf",
+   "horizon": 10,
+   "tried": 20,
+   "train": 0.6562,
+   "val": 0.5021,
+   "std": 0.0026,
+   "gap": 0.1541,
+   "score": 0.5008
+  },
+  {
+   "model": "ridge",
+   "horizon": 10,
+   "tried": 20,
+   "train": 0.578,
+   "val": 0.4828,
+   "std": 0.0311,
+   "gap": 0.0953,
+   "score": 0.4672
+  },
+  {
+   "model": "gb",
+   "horizon": 20,
+   "tried": 20,
+   "note": "所有參數落差過大，維持預設"
+  },
+  {
+   "model": "rf",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.557,
+   "val": 0.5,
+   "std": 0.0,
+   "gap": 0.057,
+   "score": 0.5
+  },
+  {
+   "model": "ridge",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.6803,
+   "val": 0.4997,
+   "std": 0.0451,
+   "gap": 0.1807,
+   "score": 0.4771
+  }
+ ]
+}
