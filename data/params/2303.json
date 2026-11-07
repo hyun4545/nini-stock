@@ -1,54 +1,54 @@
 {
  "code": "2303",
- "tuned_at": "2026-10-31T08:08:40+00:00",
- "outer_start_date": "2026-05-07",
- "max_date_used": "2026-05-06",
+ "tuned_at": "2026-11-07T08:21:40+00:00",
+ "outer_start_date": "2026-05-14",
+ "max_date_used": "2026-05-13",
  "params": {
   "gb": {
    "5": {
-    "learning_rate": 0.028205861344130282,
-    "max_depth": 6,
-    "min_samples_leaf": 84,
-    "l2_regularization": 2.3064220899374743,
-    "max_iter": 254
+    "learning_rate": 0.013313225142315125,
+    "max_depth": 3,
+    "min_samples_leaf": 74,
+    "l2_regularization": 6.471895115742501,
+    "max_iter": 151
    },
    "10": {
-    "learning_rate": 0.010148664197604776,
-    "max_depth": 5,
-    "min_samples_leaf": 82,
-    "l2_regularization": 9.782657138401458,
-    "max_iter": 206
+    "learning_rate": 0.013843520778548326,
+    "max_depth": 3,
+    "min_samples_leaf": 74,
+    "l2_regularization": 7.1461853665475275,
+    "max_iter": 264
    }
   },
   "rf": {
    "5": {
-    "n_estimators": 69,
-    "max_depth": 5,
-    "min_samples_leaf": 24,
-    "max_features": 0.5480853808061511
+    "n_estimators": 124,
+    "max_depth": 8,
+    "min_samples_leaf": 95,
+    "max_features": 0.34597305331236206
    },
    "10": {
-    "n_estimators": 125,
-    "max_depth": 6,
-    "min_samples_leaf": 75,
-    "max_features": 0.3370981902093523
+    "n_estimators": 109,
+    "max_depth": 8,
+    "min_samples_leaf": 45,
+    "max_features": 0.37500308629111395
    },
    "20": {
-    "n_estimators": 122,
-    "max_depth": 8,
-    "min_samples_leaf": 72,
-    "max_features": 0.5445354737100805
+    "n_estimators": 67,
+    "max_depth": 4,
+    "min_samples_leaf": 33,
+    "max_features": 0.6604432373691346
    }
   },
   "ridge": {
    "5": {
-    "alpha": 231.88311105965008
+    "alpha": 107.59795306520695
    },
    "10": {
-    "alpha": 451.6094809881252
+    "alpha": 100.0
    },
    "20": {
-    "alpha": 194.3339312506167
+    "alpha": 58.221838836476216
    }
   }
  },
@@ -57,61 +57,61 @@
    "model": "gb",
    "horizon": 5,
    "tried": 20,
-   "train": 0.738,
-   "val": 0.5423,
-   "std": 0.0275,
-   "gap": 0.1957,
-   "score": 0.5286
+   "train": 0.675,
+   "val": 0.5406,
+   "std": 0.0339,
+   "gap": 0.1344,
+   "score": 0.5236
   },
   {
    "model": "rf",
    "horizon": 5,
    "tried": 20,
-   "train": 0.7236,
-   "val": 0.5401,
-   "std": 0.0288,
-   "gap": 0.1835,
-   "score": 0.5257
+   "train": 0.608,
+   "val": 0.5375,
+   "std": 0.0461,
+   "gap": 0.0705,
+   "score": 0.5144
   },
   {
    "model": "ridge",
    "horizon": 5,
    "tried": 20,
-   "train": 0.612,
-   "val": 0.5255,
-   "std": 0.0323,
-   "gap": 0.0866,
-   "score": 0.5093
+   "train": 0.6201,
+   "val": 0.5204,
+   "std": 0.0331,
+   "gap": 0.0997,
+   "score": 0.5039
   },
   {
    "model": "gb",
    "horizon": 10,
    "tried": 20,
-   "train": 0.7212,
-   "val": 0.5459,
-   "std": 0.0511,
-   "gap": 0.1753,
-   "score": 0.5204
+   "train": 0.7547,
+   "val": 0.5654,
+   "std": 0.0621,
+   "gap": 0.1892,
+   "score": 0.5344
   },
   {
    "model": "rf",
    "horizon": 10,
    "tried": 20,
-   "train": 0.6626,
-   "val": 0.5069,
-   "std": 0.0074,
-   "gap": 0.1557,
-   "score": 0.5032
+   "train": 0.719,
+   "val": 0.5586,
+   "std": 0.0374,
+   "gap": 0.1604,
+   "score": 0.5399
   },
   {
    "model": "ridge",
    "horizon": 10,
    "tried": 20,
-   "train": 0.6353,
-   "val": 0.5264,
-   "std": 0.0319,
-   "gap": 0.1089,
-   "score": 0.5105
+   "train": 0.6569,
+   "val": 0.5391,
+   "std": 0.0428,
+   "gap": 0.1178,
+   "score": 0.5177
   },
   {
    "model": "gb",
@@ -123,21 +123,21 @@
    "model": "rf",
    "horizon": 20,
    "tried": 20,
-   "train": 0.6886,
-   "val": 0.5313,
-   "std": 0.0253,
-   "gap": 0.1573,
-   "score": 0.5186
+   "train": 0.7583,
+   "val": 0.5763,
+   "std": 0.0607,
+   "gap": 0.182,
+   "score": 0.5459
   },
   {
    "model": "ridge",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7264,
-   "val": 0.5468,
-   "std": 0.035,
-   "gap": 0.1796,
-   "score": 0.5293
+   "train": 0.7097,
+   "val": 0.5707,
+   "std": 0.0252,
+   "gap": 0.139,
+   "score": 0.5581
   }
  ]
 }
