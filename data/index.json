@@ -7,7 +7,7 @@
    "type": "stock",
    "last_close": 29.6,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:17+08:00",
+   "updated_at": "2026-11-14T16:47+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -19,7 +19,7 @@
    "type": "stock",
    "last_close": 52.4,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:17+08:00",
+   "updated_at": "2026-11-14T16:47+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -31,7 +31,7 @@
    "type": "stock",
    "last_close": 23.2,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:17+08:00",
+   "updated_at": "2026-11-14T16:48+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -43,7 +43,7 @@
    "type": "stock",
    "last_close": 215.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:17+08:00",
+   "updated_at": "2026-11-14T16:48+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -55,7 +55,7 @@
    "type": "stock",
    "last_close": 138.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:18+08:00",
+   "updated_at": "2026-11-14T16:48+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -67,7 +67,7 @@
    "type": "stock",
    "last_close": 162.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:18+08:00",
+   "updated_at": "2026-11-14T16:49+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -79,7 +79,7 @@
    "type": "stock",
    "last_close": 30.65,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:19+08:00",
+   "updated_at": "2026-11-14T16:49+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -91,7 +91,7 @@
    "type": "stock",
    "last_close": 1635.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:19+08:00",
+   "updated_at": "2026-11-14T16:49+08:00",
    "overall_verdict": "部分模型通過驗證：Random Forest",
    "any_reliable": true,
    "synthetic": false
@@ -103,9 +103,9 @@
    "type": "stock",
    "last_close": 26.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:19+08:00",
-   "overall_verdict": "部分模型通過驗證：Gradient Boosting",
-   "any_reliable": true,
+   "updated_at": "2026-11-14T16:50+08:00",
+   "overall_verdict": "沒有任何模型通過驗證",
+   "any_reliable": false,
    "synthetic": false
   },
   {
@@ -115,7 +115,7 @@
    "type": "stock",
    "last_close": 18.4,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:19+08:00",
+   "updated_at": "2026-11-14T16:50+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -127,7 +127,7 @@
    "type": "stock",
    "last_close": 3040.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:20+08:00",
+   "updated_at": "2026-11-14T16:50+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -139,7 +139,7 @@
    "type": "stock",
    "last_close": 31.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:20+08:00",
+   "updated_at": "2026-11-14T16:51+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -151,7 +151,7 @@
    "type": "stock",
    "last_close": 2350.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:20+08:00",
+   "updated_at": "2026-11-14T16:51+08:00",
    "overall_verdict": "部分模型通過驗證：Ridge",
    "any_reliable": true,
    "synthetic": false
@@ -163,7 +163,7 @@
    "type": "stock",
    "last_close": 23.35,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:21+08:00",
+   "updated_at": "2026-11-14T16:51+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -175,7 +175,7 @@
    "type": "stock",
    "last_close": 59.8,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:21+08:00",
+   "updated_at": "2026-11-14T16:52+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -187,7 +187,7 @@
    "type": "stock",
    "last_close": 377.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:21+08:00",
+   "updated_at": "2026-11-14T16:52+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -199,7 +199,7 @@
    "type": "stock",
    "last_close": 15.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:22+08:00",
+   "updated_at": "2026-11-14T16:52+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -211,7 +211,7 @@
    "type": "stock",
    "last_close": 101.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:22+08:00",
+   "updated_at": "2026-11-14T16:53+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -223,7 +223,7 @@
    "type": "stock",
    "last_close": 231.5,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:22+08:00",
+   "updated_at": "2026-11-14T16:53+08:00",
    "overall_verdict": "部分模型通過驗證：Ridge",
    "any_reliable": true,
    "synthetic": false
@@ -235,7 +235,7 @@
    "type": "stock",
    "last_close": 785.0,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:23+08:00",
+   "updated_at": "2026-11-14T16:53+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false
@@ -247,7 +247,7 @@
    "type": "stock",
    "last_close": 54.4,
    "last_date": "2026-11-13",
-   "updated_at": "2026-11-13T23:23+08:00",
+   "updated_at": "2026-11-14T16:53+08:00",
    "overall_verdict": "沒有任何模型通過驗證",
    "any_reliable": false,
    "synthetic": false

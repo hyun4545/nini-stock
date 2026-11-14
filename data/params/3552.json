@@ -1,30 +1,23 @@
 {
  "code": "3552",
- "tuned_at": "2026-11-07T08:13:42+00:00",
- "outer_start_date": "2026-05-14",
- "max_date_used": "2026-05-13",
+ "tuned_at": "2026-11-14T08:34:05+00:00",
+ "outer_start_date": "2026-05-21",
+ "max_date_used": "2026-05-20",
  "params": {
   "gb": {
    "5": {
-    "learning_rate": 0.013313225142315125,
-    "max_depth": 3,
+    "learning_rate": 0.011443741387685993,
+    "max_depth": 6,
     "min_samples_leaf": 74,
-    "l2_regularization": 6.471895115742501,
-    "max_iter": 151
+    "l2_regularization": 1.5027946689483906,
+    "max_iter": 167
    },
    "10": {
-    "learning_rate": 0.024863214292248487,
-    "max_depth": 3,
-    "min_samples_leaf": 92,
-    "l2_regularization": 5.614007675502229,
-    "max_iter": 282
-   },
-   "20": {
-    "learning_rate": 0.021374493510683067,
-    "max_depth": 5,
-    "min_samples_leaf": 96,
-    "l2_regularization": 1.9929834067948615,
-    "max_iter": 157
+    "learning_rate": 0.02036373152712684,
+    "max_depth": 6,
+    "min_samples_leaf": 99,
+    "l2_regularization": 8.631202041893179,
+    "max_iter": 154
    }
   },
   "rf": {
@@ -35,16 +28,16 @@
     "max_features": 0.6818361974762949
    },
    "10": {
-    "n_estimators": 54,
+    "n_estimators": 109,
     "max_depth": 3,
-    "min_samples_leaf": 41,
-    "max_features": 0.4272069551383192
+    "min_samples_leaf": 30,
+    "max_features": 0.6475417177389277
    },
    "20": {
-    "n_estimators": 126,
-    "max_depth": 5,
-    "min_samples_leaf": 57,
-    "max_features": 0.3929245901142124
+    "n_estimators": 58,
+    "max_depth": 6,
+    "min_samples_leaf": 62,
+    "max_features": 0.4706884574920964
    }
   },
   "ridge": {
@@ -55,7 +48,7 @@
     "alpha": 946.4705056805287
    },
    "20": {
-    "alpha": 222.7280658540031
+    "alpha": 255.98194220357183
    }
   }
  },
@@ -64,91 +57,87 @@
    "model": "gb",
    "horizon": 5,
    "tried": 20,
-   "train": 0.7265,
-   "val": 0.5467,
-   "std": 0.03,
-   "gap": 0.1797,
-   "score": 0.5318
+   "train": 0.7505,
+   "val": 0.552,
+   "std": 0.0305,
+   "gap": 0.1986,
+   "score": 0.5367
   },
   {
    "model": "rf",
    "horizon": 5,
    "tried": 20,
-   "train": 0.7196,
-   "val": 0.5568,
-   "std": 0.0225,
-   "gap": 0.1629,
-   "score": 0.5455
+   "train": 0.7173,
+   "val": 0.5491,
+   "std": 0.0204,
+   "gap": 0.1682,
+   "score": 0.5389
   },
   {
    "model": "ridge",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6394,
-   "val": 0.5473,
-   "std": 0.0399,
-   "gap": 0.0921,
-   "score": 0.5274
+   "train": 0.6398,
+   "val": 0.5469,
+   "std": 0.0407,
+   "gap": 0.0928,
+   "score": 0.5266
   },
   {
    "model": "gb",
    "horizon": 10,
    "tried": 20,
-   "train": 0.767,
-   "val": 0.5678,
-   "std": 0.0528,
-   "gap": 0.1993,
-   "score": 0.5414
+   "train": 0.7344,
+   "val": 0.5612,
+   "std": 0.0558,
+   "gap": 0.1731,
+   "score": 0.5334
   },
   {
    "model": "rf",
    "horizon": 10,
    "tried": 20,
-   "train": 0.7553,
-   "val": 0.5706,
-   "std": 0.0212,
-   "gap": 0.1847,
-   "score": 0.56
+   "train": 0.7603,
+   "val": 0.5726,
+   "std": 0.0293,
+   "gap": 0.1877,
+   "score": 0.5579
   },
   {
    "model": "ridge",
    "horizon": 10,
    "tried": 20,
-   "train": 0.6671,
-   "val": 0.5617,
-   "std": 0.0473,
-   "gap": 0.1054,
-   "score": 0.538
+   "train": 0.6696,
+   "val": 0.5576,
+   "std": 0.0429,
+   "gap": 0.112,
+   "score": 0.5361
   },
   {
    "model": "gb",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7994,
-   "val": 0.6041,
-   "std": 0.0986,
-   "gap": 0.1953,
-   "score": 0.5547
+   "note": "所有參數落差過大，維持預設"
   },
   {
    "model": "rf",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7537,
-   "val": 0.5897,
-   "std": 0.0617,
-   "gap": 0.164,
-   "score": 0.5589
+   "train": 0.7527,
+   "val": 0.5901,
+   "std": 0.0579,
+   "gap": 0.1626,
+   "score": 0.5611
   },
   {
    "model": "ridge",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7656,
-   "val": 0.5995,
-   "std": 0.0667,
-   "gap": 0.1662,
-   "score": 0.5661
+   "train": 0.7636,
+   "val": 0.5934,
+   "std": 0.0624,
+   "gap": 0.1701,
+   "score": 0.5622
   }
  ]
 }

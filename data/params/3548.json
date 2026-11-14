@@ -1,24 +1,24 @@
 {
  "code": "3548",
- "tuned_at": "2026-11-07T08:17:41+00:00",
- "outer_start_date": "2026-05-14",
- "max_date_used": "2026-05-13",
+ "tuned_at": "2026-11-14T08:38:27+00:00",
+ "outer_start_date": "2026-05-21",
+ "max_date_used": "2026-05-20",
  "params": {
   "gb": {
    "5": {
-    "learning_rate": 0.013648863957002847,
-    "max_depth": 4,
-    "min_samples_leaf": 66,
-    "l2_regularization": 5.253543224757259,
-    "max_iter": 245
+    "learning_rate": 0.011443741387685993,
+    "max_depth": 6,
+    "min_samples_leaf": 74,
+    "l2_regularization": 1.5027946689483906,
+    "max_iter": 167
    }
   },
   "rf": {
    "5": {
-    "n_estimators": 88,
+    "n_estimators": 132,
     "max_depth": 7,
-    "min_samples_leaf": 38,
-    "max_features": 0.39294916785572154
+    "min_samples_leaf": 34,
+    "max_features": 0.3113461460454084
    },
    "10": {
     "n_estimators": 143,
@@ -35,13 +35,13 @@
   },
   "ridge": {
    "5": {
-    "alpha": 16.45742970261471
+    "alpha": 17.73892791570574
    },
    "10": {
     "alpha": 3.3671240741056065
    },
    "20": {
-    "alpha": 255.98194220357183
+    "alpha": 52.81354289556641
    }
   }
  },
@@ -50,31 +50,31 @@
    "model": "gb",
    "horizon": 5,
    "tried": 20,
-   "train": 0.7517,
-   "val": 0.5585,
-   "std": 0.029,
-   "gap": 0.1932,
-   "score": 0.544
+   "train": 0.7213,
+   "val": 0.5527,
+   "std": 0.0507,
+   "gap": 0.1686,
+   "score": 0.5274
   },
   {
    "model": "rf",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6948,
-   "val": 0.5296,
-   "std": 0.0345,
-   "gap": 0.1652,
-   "score": 0.5124
+   "train": 0.7062,
+   "val": 0.5254,
+   "std": 0.0445,
+   "gap": 0.1809,
+   "score": 0.5031
   },
   {
    "model": "ridge",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6294,
-   "val": 0.5384,
-   "std": 0.0339,
-   "gap": 0.0911,
-   "score": 0.5214
+   "train": 0.6318,
+   "val": 0.5289,
+   "std": 0.0292,
+   "gap": 0.103,
+   "score": 0.5143
   },
   {
    "model": "gb",
@@ -86,47 +86,47 @@
    "model": "rf",
    "horizon": 10,
    "tried": 20,
-   "train": 0.6506,
-   "val": 0.4847,
-   "std": 0.0214,
-   "gap": 0.1658,
-   "score": 0.474
+   "train": 0.6508,
+   "val": 0.4883,
+   "std": 0.0257,
+   "gap": 0.1625,
+   "score": 0.4755
   },
   {
    "model": "ridge",
    "horizon": 10,
    "tried": 20,
-   "train": 0.7165,
-   "val": 0.5318,
-   "std": 0.029,
-   "gap": 0.1847,
-   "score": 0.5173
-  },
-  {
-   "model": "gb",
-   "horizon": 20,
-   "tried": 20,
-   "note": "所有參數落差過大，維持預設"
-  },
-  {
-   "model": "rf",
-   "horizon": 20,
-   "tried": 20,
-   "train": 0.6703,
-   "val": 0.4882,
-   "std": 0.02,
-   "gap": 0.1821,
-   "score": 0.4782
-  },
-  {
-   "model": "ridge",
-   "horizon": 20,
-   "tried": 20,
-   "train": 0.7209,
-   "val": 0.5426,
-   "std": 0.0482,
-   "gap": 0.1783,
+   "train": 0.7177,
+   "val": 0.5339,
+   "std": 0.031,
+   "gap": 0.1839,
    "score": 0.5184
+  },
+  {
+   "model": "gb",
+   "horizon": 20,
+   "tried": 20,
+   "note": "所有參數落差過大，維持預設"
+  },
+  {
+   "model": "rf",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.6735,
+   "val": 0.4829,
+   "std": 0.0261,
+   "gap": 0.1906,
+   "score": 0.4699
+  },
+  {
+   "model": "ridge",
+   "horizon": 20,
+   "tried": 20,
+   "train": 0.7619,
+   "val": 0.5628,
+   "std": 0.0636,
+   "gap": 0.1991,
+   "score": 0.531
   }
  ]
 }
