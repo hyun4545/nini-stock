@@ -1,23 +1,23 @@
 {
  "code": "2912",
- "tuned_at": "2026-11-21T09:00:14+00:00",
- "outer_start_date": "2026-05-28",
- "max_date_used": "2026-05-27",
+ "tuned_at": "2026-11-28T09:39:30+00:00",
+ "outer_start_date": "2026-06-04",
+ "max_date_used": "2026-06-03",
  "params": {
   "gb": {
    "5": {
-    "learning_rate": 0.013313225142315125,
+    "learning_rate": 0.025383519597864834,
     "max_depth": 3,
-    "min_samples_leaf": 74,
-    "l2_regularization": 6.471895115742501,
-    "max_iter": 151
+    "min_samples_leaf": 100,
+    "l2_regularization": 0.907530456191219,
+    "max_iter": 139
    },
    "10": {
-    "learning_rate": 0.02036373152712684,
-    "max_depth": 6,
-    "min_samples_leaf": 99,
-    "l2_regularization": 8.631202041893179,
-    "max_iter": 154
+    "learning_rate": 0.024863214292248487,
+    "max_depth": 3,
+    "min_samples_leaf": 92,
+    "l2_regularization": 5.614007675502229,
+    "max_iter": 282
    },
    "20": {
     "learning_rate": 0.05055752080722427,
@@ -35,27 +35,27 @@
     "max_features": 0.6708618212271469
    },
    "10": {
-    "n_estimators": 98,
-    "max_depth": 5,
-    "min_samples_leaf": 68,
-    "max_features": 0.5620484255965521
+    "n_estimators": 129,
+    "max_depth": 3,
+    "min_samples_leaf": 66,
+    "max_features": 0.3788939789183474
    },
    "20": {
-    "n_estimators": 109,
+    "n_estimators": 122,
     "max_depth": 8,
-    "min_samples_leaf": 40,
-    "max_features": 0.32906333945932836
+    "min_samples_leaf": 72,
+    "max_features": 0.5445354737100805
    }
   },
   "ridge": {
    "5": {
-    "alpha": 356.8397961799388
+    "alpha": 231.88311105965008
    },
    "10": {
-    "alpha": 0.22246387045348134
+    "alpha": 2.0053143628067036
    },
    "20": {
-    "alpha": 0.5971862773781259
+    "alpha": 0.44697053943826176
    }
   }
  },
@@ -64,91 +64,91 @@
    "model": "gb",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6857,
-   "val": 0.5309,
-   "std": 0.0425,
-   "gap": 0.1548,
-   "score": 0.5097
+   "train": 0.6614,
+   "val": 0.5371,
+   "std": 0.0358,
+   "gap": 0.1243,
+   "score": 0.5192
   },
   {
    "model": "rf",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6488,
-   "val": 0.5282,
-   "std": 0.0266,
-   "gap": 0.1207,
-   "score": 0.5148
+   "train": 0.6459,
+   "val": 0.5308,
+   "std": 0.0297,
+   "gap": 0.1152,
+   "score": 0.5159
   },
   {
    "model": "ridge",
    "horizon": 5,
    "tried": 20,
-   "train": 0.6073,
-   "val": 0.5409,
-   "std": 0.0231,
-   "gap": 0.0664,
-   "score": 0.5293
+   "train": 0.6163,
+   "val": 0.54,
+   "std": 0.0209,
+   "gap": 0.0762,
+   "score": 0.5296
   },
   {
    "model": "gb",
    "horizon": 10,
    "tried": 20,
-   "train": 0.7091,
-   "val": 0.5559,
-   "std": 0.0673,
-   "gap": 0.1532,
-   "score": 0.5222
+   "train": 0.7372,
+   "val": 0.5532,
+   "std": 0.0616,
+   "gap": 0.184,
+   "score": 0.5224
   },
   {
    "model": "rf",
    "horizon": 10,
    "tried": 20,
-   "train": 0.6442,
-   "val": 0.5403,
-   "std": 0.0395,
-   "gap": 0.1039,
-   "score": 0.5206
+   "train": 0.6286,
+   "val": 0.5345,
+   "std": 0.0347,
+   "gap": 0.0941,
+   "score": 0.5172
   },
   {
    "model": "ridge",
    "horizon": 10,
    "tried": 20,
-   "train": 0.7262,
-   "val": 0.5587,
-   "std": 0.04,
-   "gap": 0.1674,
-   "score": 0.5387
+   "train": 0.7378,
+   "val": 0.5569,
+   "std": 0.0437,
+   "gap": 0.1809,
+   "score": 0.535
   },
   {
    "model": "gb",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7864,
-   "val": 0.6124,
-   "std": 0.094,
-   "gap": 0.1739,
-   "score": 0.5655
+   "train": 0.7853,
+   "val": 0.6029,
+   "std": 0.0833,
+   "gap": 0.1824,
+   "score": 0.5612
   },
   {
    "model": "rf",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7923,
-   "val": 0.5938,
-   "std": 0.0572,
-   "gap": 0.1985,
-   "score": 0.5652
+   "train": 0.6877,
+   "val": 0.582,
+   "std": 0.0785,
+   "gap": 0.1057,
+   "score": 0.5428
   },
   {
    "model": "ridge",
    "horizon": 20,
    "tried": 20,
-   "train": 0.7818,
-   "val": 0.6004,
-   "std": 0.0551,
-   "gap": 0.1814,
-   "score": 0.5728
+   "train": 0.7801,
+   "val": 0.5889,
+   "std": 0.0495,
+   "gap": 0.1913,
+   "score": 0.5641
   }
  ]
 }
